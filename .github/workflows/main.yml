@@ -30,7 +30,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         ssh -tt -A jenishjain@3.6.126.66
-        echo Juju6397
+        Juju6397
         cd Ledger-v2
         git pull
         pm2 reload app
