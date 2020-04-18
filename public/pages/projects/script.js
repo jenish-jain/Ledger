@@ -107,10 +107,6 @@ async function createNewProj() {
     .catch(error => console.log("error", error));
 }
 
-// name:name,
-//             startDate:startDate,
-//             status:status,
-
 function goToProject(project_id) {
   console.log(project_id);
   document.cookie = project_id.toString() + ";path=/pages/dashboard";

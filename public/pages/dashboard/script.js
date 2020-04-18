@@ -19,9 +19,7 @@ async function fetchUserSession() {
   let userJson = await res.json();
   console.log(res);
   console.log(userJson);
-  // return userJson;
   document.getElementById("username").innerText = userJson.username;
-  // document.getElementById("project-name").innerText = userJson.username;
 }
 
 function goToProjects() {
@@ -38,13 +36,11 @@ async function fetchTransaction(projectId, type) {
     hostURL +
     "api/transaction?" +
     "projectId=" +
-    // projectId.toString() +
     projectId +
     "&type=" +
     type
   );
   let data = await res.json();
-  // console.log(data);
   return data;
 }
 
