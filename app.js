@@ -1,6 +1,7 @@
 const express = require("express");
 const middlewares = require("./routes/middleware");
 const routes = require("./routes/routes.js");
+const mongodb = require("mongodb");
 const config = require('./config/config');
 const DB_URI = config.mongo.write_uri;
 const session = require("express-session");
