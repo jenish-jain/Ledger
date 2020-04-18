@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.navbar {
+  background-color: rgba(2, 2, 58, 1);
+  color: whitesmoke;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+#company-name {
+  font-family: "Bebas Neue", cursive;
+  font-size: 35px;
+}
+#logout {
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  outline: none;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 6px;
+  border-radius: 3px;
+  margin: 0 15px;
+  font-size: 17px;
+}
+#logout:hover {
+  background-color: rgba(245, 245, 245, 0.3);
+}
+#logout:active {
+  transform: scale(0.92);
+}
+#project-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 3rem;
+  flex-wrap: wrap;
+}
+
+#live-proj {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+}
+
+.cardBtn {
+  background-color: rgba(2, 2, 58, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 6px;
+  border-radius: 50%;
+  /* margin:15px 0px; */
+  font-size: 17px;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.cardBtn:hover {
+  background-color: rgba(2, 2, 58, 0.9);
+}
+.cardBtn:active {
+  transform: scale(0.92);
+}
+
+.projCard {
+  border: 1px solid rgba(2, 2, 58, 0.5);
+  background-color: ghostwhite;
+  box-shadow: 5px 6px 15px rgba(2, 2, 58, 0.4);
+  border-radius: 2px 2px 95px 2px;
+  padding: 20px 50px;
+  margin: 20px;
+  display: flex;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  /* max-height: 210px; */
+  width: 390px;
+  /* max-width: 390px; */
+  position: relative;
+}
+
+.card-title {
+  border: 1px solid rgba(2, 2, 58, 0.8);
+  background-color: rgb(2, 2, 58);
+  color: whitesmoke;
+  text-align: center;
+  /* border-radius:2px 2px 15px 2px; */
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 10px;
+  position: absolute;
+  top: -20px;
+  height: 30px;
+  width: 350px;
+  padding: 12px;
+}
+
+.card-input {
+  border: none;
+  height: 2rem;
+  outline: none;
+  border-bottom: 1px solid lightgrey;
+  background-color: ghostwhite;
+  margin: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+}
+
+.tooltip {
+  display: inline-block;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+/*mobile portrait*/
+
+@media only screen and (max-width: 414px) {
+  #project-panel {
+    padding: 15px 8px;
+  }
+
+  .projCard {
+    /* margin: 10px; */
+    border-radius: 2px 2px 85px 2px;
+    font-size: 16px;
+    height: 20vh;
+    width: 70vw;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    padding: 5px;
+    width: 72vw;
+  }
+
+  .card-input {
+    font-size: 20px;
+  }
+  .cardBtn {
+    height: 55px;
+    width: 55px;
+  }
+}

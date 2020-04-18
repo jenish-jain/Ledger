@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <title>Ledger</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <p id="company-name">Ledger</p>
+            <!-- <p id="project-name"></p> -->
+            <div id="user-info" class="tooltip" onclick="goToProjects()">
+                <span class="tooltiptext">Go to all projects</span>
+                <img class="round-icon" src="https://nameless-wave-18089.herokuapp.com/assets/user1.jpg">
+                <p id="username"></p>
+            </div>
+        </div>
+
+        <hr>
+        <div class="transaction-header">
+            <div class="project-metrics">
+                <div class="text-info">
+                    <p class="heading">Total Balance</p>
+                    <p id="balance"></p>
+                    <p class="heading-2">Profit percentage</p>
+                    <p id="profit"></p>
+                    <div class="highlights">
+                        <span class="heading-2">Total Income</span>
+                        <span class="heading-3" id="totalIncome"></span>
+                        <br />
+                        <span class="heading-2">Total Expense</span>
+                        <span class="heading-3" id="totalExpense"></span>
+                    </div>
+                </div>
+                <div class="graph-info">
+                    <progress id="cash-bar" value="80" max="20000000">
+                    </progress><span class="heading">Balance vs income</span>
+                </div>
+                <input type="button" id="btnExport" value="Export as PDF" onclick="Export()" />
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="transactions">
+            <div class="tools">
+                <div class="view-options">
+                    <div id="btn-slider"></div>
+                    <button type="button" class="toggle-btn" onclick="showAll()">All</button>
+                    <button type="button" class="toggle-btn" onclick="showIncome()">Income</button>
+                    <button type="button" class="toggle-btn" onclick="showExpense()">Expense</button>
+                </div>
+                <button type="button" id="add-transaction" onclick="openModal()">Add new Transaction</button>
+            </div>
+
+            <div class="loader" id="loader">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+                <div class="bar bar4"></div>
+                <div class="bar bar5"></div>
+                <div class="bar bar6"></div>
+                <div class="bar bar7"></div>
+                <div class="bar bar8"></div>
+                <br>
+                <div>loading data...</div>
+            </div>
+
+            <div id="new-transaction-modal" class="modal">
+                <div class="new-transaction-form">
+                    <span class="close">&times;</span>
+                    <form id="transactionForm" target="_blank">
+                        <fieldset>
+                            <legend><span class="number">1</span>Transaction Details</legend>
+                            <!-- <input type="text" name="project_id" value=""> -->
+                            <input type="text" name="source" placeholder="Source Of Transaction *" required>
+                            <input type="number" name="amount" placeholder="Amount*" required>
+                            <textarea name="description" placeholder="Description*" required></textarea>
+                            <label for="typeOfTran">Type of Transaction</label>
+                            <select id="typeOfTran" name="type">
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </fieldset>
+                        <input type="submit" value="Add Transaction" />
+                    </form>
+                </div>
+            </div>
+
+            <table class="transaction-view" id="main-table">
+
+                <tr>
+                    <th>Source</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>TimeStamp</th>
+                    <th></th>
+                </tr>
+
+            </table>
+            <table class="transaction-view" id="income-table">
+
+                <tr>
+                    <th>Source</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>TimeStamp</th>
+                    <th></th>
+                </tr>
+
+            </table>
+            <table class="transaction-view" id="expense-table">
+
+                <tr>
+                    <th>Source</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>TimeStamp</th>
+                    <th></th>
+                </tr>
+
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>

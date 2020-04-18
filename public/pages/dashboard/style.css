@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  background-color: rgb(2, 2, 58);
+  height: 35vh;
+  padding: 0 10px;
+  color: whitesmoke;
+}
+
+.top-bar {
+  padding: 4px 25px;
+  margin: 0px 5px 5px 0px;
+  display: flex;
+  direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: whitesmoke;
+}
+
+#company-name {
+  font-family: "Bebas Neue", cursive;
+  font-size: 35px;
+  font-weight: bold;
+  color: whitesmoke;
+  justify-self: flex-start;
+  margin: 0 25px 0 0;
+}
+#user-info {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#username {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tooltip {
+  display: inline-block;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(2, 2, 58);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  /* position: absolute; */
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.project-metrics {
+  margin: 1rem;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.highlights {
+  margin-top: 3rem;
+}
+
+.graph-info {
+  width: 50%;
+}
+
+.heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: rgba(233, 238, 247, 0.5);
+}
+.heading-2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: rgba(233, 238, 247, 0.5);
+  margin: 5px 0px;
+  margin-right: 15px;
+}
+.heading-3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: rgba(233, 238, 247, 0.7);
+  margin-right: 15px;
+}
+
+#balance {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: rgb(233, 238, 247);
+}
+hr {
+  border-radius: 1px;
+  color: whitesmoke;
+  opacity: 0.4;
+  width: 98%;
+  margin: auto;
+}
+.round-icon {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 0 15px;
+}
+progress {
+  /* display:block; */
+  width: 60%;
+  height: 20px;
+  margin: 7px 0;
+  margin: 15px;
+  background: none;
+  border: 0;
+  border-radius: 20px;
+}
+progress::-webkit-progress-bar {
+  height: 20px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(42, 42, 89);
+  border-radius: 100px;
+}
+progress::-webkit-progress-value {
+  display: inline-block;
+  height: 20px;
+  margin: 0px -10px 0 0;
+  padding-left: 50px; /* Rounded corners requires a padding*/
+  background: rgb(1, 243, 195);
+  border-radius: 100px;
+}
+
+main {
+  background: rgb(2, 2, 58);
+  padding: 10px;
+  display: block;
+  /* height: fit-content; */
+  /* position: relative; */
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loader {
+  display: block;
+}
+.bar {
+  width: 6px;
+  height: 60px;
+  background: white;
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: loading 1.5s ease-in-out infinite;
+}
+.bar1 {
+  animation-delay: 0.1s;
+}
+.bar2 {
+  animation-delay: 0.2s;
+}
+.bar3 {
+  animation-delay: 0.3s;
+}
+.bar4 {
+  animation-delay: 0.4s;
+}
+.bar5 {
+  animation-delay: 0.5s;
+}
+.bar6 {
+  animation-delay: 0.6s;
+}
+.bar7 {
+  animation-delay: 0.7s;
+}
+.bar8 {
+  animation-delay: 0.8s;
+}
+@keyframes loading {
+  0% {
+    transform: scaleY(0.1);
+    background: #fff;
+  }
+  50% {
+    transform: scaleY(1);
+    background: #2ecc71;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
+}
+
+.transactions {
+  background-color: rgb(245, 248, 252);
+  min-height: 60vh;
+  border-radius: 5px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.view-options {
+  background-color: rgb(215, 217, 228);
+  width: auto;
+  position: relative;
+}
+
+#btn-slider {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 95px;
+  height: 100%;
+  background-color: #f3f3f3;
+  border-radius: 9px 9px 0 0;
+  transition: 0.5s;
+}
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(215, 217, 228);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 2;
+}
+
+#add-transaction {
+  padding: 6px 24px;
+  margin: 2px;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.new-transaction-form {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* form css start */
+.new-transaction-form {
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+}
+.new-transaction-form fieldset {
+  border: none;
+}
+.new-transaction-form legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.new-transaction-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+.new-transaction-form input[type="text"],
+.new-transaction-form input[type="date"],
+.new-transaction-form input[type="datetime"],
+.new-transaction-form input[type="email"],
+.new-transaction-form input[type="number"],
+.new-transaction-form input[type="search"],
+.new-transaction-form input[type="time"],
+.new-transaction-form input[type="url"],
+.new-transaction-form textarea,
+.new-transaction-form select {
+  font-family: "Roboto", sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #e8eeef;
+  color: rgb(50, 54, 58);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+.new-transaction-form input[type="text"]:focus,
+.new-transaction-form input[type="date"]:focus,
+.new-transaction-form input[type="datetime"]:focus,
+.new-transaction-form input[type="email"]:focus,
+.new-transaction-form input[type="number"]:focus,
+.new-transaction-form input[type="search"]:focus,
+.new-transaction-form input[type="time"]:focus,
+.new-transaction-form input[type="url"]:focus,
+.new-transaction-form textarea:focus,
+.new-transaction-form select:focus {
+  background: #d2d9dd;
+}
+.new-transaction-form select {
+  -webkit-appearance: menulist-button;
+  height: 35px;
+}
+.new-transaction-form .number {
+  background: rgba(12, 12, 121, 0.7);
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 15px 15px 15px 0px;
+}
+
+.new-transaction-form input[type="submit"],
+.new-transaction-form input[type="button"] {
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  margin: 0 auto;
+  background: rgb(2, 2, 58);
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid rgba(2, 2, 58, 0.5);
+  border-radius: 4px;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+}
+.new-transaction-form input[type="submit"]:hover,
+.new-transaction-form input[type="button"]:hover {
+  background: rgb(2, 2, 58);
+}
+/* form css end */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  position: relative;
+}
+th {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  background: #f3f3f3; /* Light grey background */
+  font-weight: bold;
+  padding: 8px;
+}
+
+td {
+  background: #fafafa;
+  text-align: center;
+  height: 40px;
+}
+tr {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+/* Cells in even rows (2,4,6...) are one color */
+tr:nth-child(even) td {
+  background: rgb(233, 238, 247);
+}
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+tr:nth-child(odd) td {
+  background: rgb(245, 248, 252);
+}
+
+tr td:hover {
+  background: rgb(215, 217, 228);
+  /* color: #FFF;  */
+}
+#btnExport {
+  padding: 6px 24px;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  outline: none;
+  align-self: flex-end;
+}
+
+.income {
+  color: green;
+}
+
+.expense {
+  color: red;
+}
+.transaction-view {
+  position: absolute;
+  transition: 0.5s;
+}
+#income-table {
+  left: 100vw;
+}
+#expense-table {
+  left: 200vw;
+}
+
+.delete {
+  color: rgb(136, 136, 136);
+}
+.delete:hover {
+  cursor: pointer;
+}

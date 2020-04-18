@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://nameless-wave-18089.herokuapp.com/style.css" type="text/css" rel="stylesheet"> -->
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Ledger</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_bg"></div>
+        <button id="loginbtn">Login / Signup</button>
+
+        <div class="company-name">LEDGER</div>
+        <div class="hero">
+            <p class="description">Keeping Track of your transactions was never this easier</p>
+            <img id="tablet" src="https://nameless-wave-18089.herokuapp.com/assets/webiste-in-tablet.png">
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="about-us">
+                <div class="heading">About Us</div>
+                <p class="content">
+                    Ledger is an online tool to keep track of your company's transactions and display
+                    it beautifully.
+                    <br />
+                    It’s your money, right? The financial core of your business is in good hands with Ledger.
+                    Integration is
+                    standard, and all information feeds back to General Ledger for pain-free, real-time financial
+                    reporting.
+                    Get the pulse of your cash flow when it’s convenient for you, not at the end of some arbitrary
+                    period of
+                    time. With Accounting Software, you can be more efficient and more productive, regardless of the
+                    size
+                    and scope of your channel.
+                </p>
+            </div>
+            <div class="features">
+                <p class="heading">Features</p>
+                <p class="sub-heading">Data Privacy</p>
+                <p class="content">We maintain user sessions, so neither are you able to see anyone else's data nor
+                    is anyone else able to see yours. Thus your critical informations stay secured with ledger.</p>
+                <p class="sub-heading">Multiple Project creation</p>
+                <p class="content">You can create multiple projects and work on them individually, with seamless
+                    interaction provided in our dashboard.</p>
+                <p class="sub-heading">Quick Analysis</p>
+                <p class="content">We automatically calculate your profit percentage, cash in hand and other quick
+                    measures to have a glance at your finances.</p>
+                <p class="sub-heading">Filter View</p>
+                <p class="content">View your income and expense related transactions seperately with just a click.</p>
+                <p class="sub-heading">Export to PDF</p>
+                <p class="content">Want a hard copy of your transactions ? No problem , we have got you coverd. Generate
+                    pdf copy of your transaction with a single click.</p>
+            </div>
+        </div>
+
+        <div id="signin-modal">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form id="signUpForm">
+                        <h1>Create Account</h1>
+
+                        <span> use your email for registration</span>
+                        <input type="text" placeholder="Name" name="name" required />
+                        <input type="email" placeholder="Email" name="email" required />
+                        <input type="password" placeholder="Password" name="password" required />
+                        <button type="submit">SIGN UP</button>
+                        <div class="message" id="signUpFormMsg"></div>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form id="signInForm">
+                        <h1>Sign in</h1>
+
+                        <span>use your account</span>
+                        <input type="email" placeholder="Email" name="email" required />
+                        <input type="password" placeholder="Password" name="password" required />
+                        <button type="submit" onclick="loginUser()">SIGN IN</button>
+                        <div class="message" id="signInFormMsg"></div>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Welcome Back!</h1>
+                            <p>
+                                To keep connected with us please login with your personal info
+                            </p>
+                            <button class="ghost" id="signIn">SIGN IN</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Enter your personal details and start journey with us</p>
+                            <button class="ghost" id="signUp">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- <script src="https://nameless-wave-18089.herokuapp.com/script.js"></script> -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
