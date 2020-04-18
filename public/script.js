@@ -1,6 +1,9 @@
 // const hostURL = "https://nameless-wave-18089.herokuapp.com/";
 // const hostURL = "http://localhost:3000/";
 const hostURL = "http://3.6.126.66:83/";
+// var requirejs = require("requirejs");
+// var config = requirejs('../../config/config.js');
+// console.log(config);
 const loginbtn = document.getElementById("loginbtn");
 const modal = document.getElementById("signin-modal");
 
@@ -36,9 +39,6 @@ signUpForm.addEventListener("submit", signUpUser);
 async function signUpUser() {
   event.preventDefault();
   let signUpEle = document.forms.signUpForm.elements;
-  // console.log(signUpEle.name.value);
-  // console.log(signUpEle.email.value);
-  // console.log(signUpEle.password.value);
   let data = JSON.stringify({
     username: signUpEle.name.value,
     email: signUpEle.email.value,
@@ -56,9 +56,9 @@ async function signUpUser() {
     console.log("Success:", JSON.stringify(dataJson));
     console.log("Successful Signup");
     document.forms.signUpForm.reset();
-    // document.getElementById("signUpFormMsg").innerText = "please login in with your credentials";
-    alert("login with your newely created credentials");
     document.getElementById("signIn").click();
+    document.getElementById("signInFormMsg").innerHTML =
+      '<p style="color:green" >login with you new credentials</p>';
   } catch (error) {
     console.log("error", error);
   }
@@ -101,6 +101,7 @@ async function loginUser() {
       window.location.assign(
         hostURL + "pages/projects/index.html"
       );
+      document.getElementById('signInFormMsg').innerText = "";
     } else {
       alert(res.text());
     }
