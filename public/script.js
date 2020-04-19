@@ -1,9 +1,6 @@
-// const hostURL = "https://nameless-wave-18089.herokuapp.com/";
+const hostURL = "https://ledger-dev.herokuapp.com/";
 // const hostURL = "http://localhost:3000/";
-const hostURL = "http://3.6.126.66:83/";
-// var requirejs = require("requirejs");
-// var config = requirejs('../../config/config.js');
-// console.log(config);
+// const hostURL = "http://3.6.126.66:83/";
 const loginbtn = document.getElementById("loginbtn");
 const modal = document.getElementById("signin-modal");
 
