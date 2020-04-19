@@ -1,6 +1,6 @@
-// const hostURL = "https://nameless-wave-18089.herokuapp.com/";
+const hostURL = "https://ledger-dev.herokuapp.com/";
 // const hostURL = "http://localhost:3000/";
-const hostURL = "http://3.6.126.66:83/";
+// const hostURL = "http://3.6.126.66:83/";
 
 async function fetchUserSession() {
   let cookie = document.cookie;
@@ -23,7 +23,11 @@ async function showUserInfo() {
   const userJson = await user.json();
   console.log(userJson.data);
   console.log(userJson.data.project);
-  userJson.data.projects.forEach(createProjectCard);
+  try{
+    userJson.data.projects.forEach(createProjectCard);
+  }catch(error){
+    console.error("error is", error.message)
+  }
 }
 
 async function refreshUserInfo() {
@@ -31,7 +35,11 @@ async function refreshUserInfo() {
   document.getElementById("live-proj").innerHTML = "";
   let user = await fetch(hostURL + "api/user/" + sessionObj._id);
   const userJson = await user.json();
-  userJson.data.projects.forEach(createProjectCard);
+  try{
+    userJson.data.projects.forEach(createProjectCard);
+  }catch(error){
+    console.error("error is", error.message)
+  }
 }
 
 showUserInfo();
@@ -64,7 +72,7 @@ function createProjectCard(project) {
 }
 
 async function logout() {
-  fetch(hostURL + "/api/user/logout", {
+  fetch(hostURL + "api/user/logout", {
     method: "GET",
     redirect: "follow"
   })
@@ -72,7 +80,7 @@ async function logout() {
     .then(result => console.log(result))
     .catch(error => console.log("error", error));
 
-  window.location.assign(hostURLs);
+  window.location.assign(hostURL);
 }
 
 async function createNewProj() {
@@ -80,6 +88,7 @@ async function createNewProj() {
   console.log(projName);
   if (projName === "") {
     alert("project name cannot be empty");
+    return Promise.reject({message : "empty project name"})
   }
   let user = await fetchUserSession();
   document.getElementById("newProjName").value = "";

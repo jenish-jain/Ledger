@@ -18,8 +18,5 @@
     "moment": "^2.24.0",
     "mongodb": "^3.4.0",
     "requirejs": "^2.3.6"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
   }
 }
